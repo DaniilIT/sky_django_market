@@ -34,7 +34,7 @@ ALLOWED_HOSTS = ["*"]
 
 # Application definition
 
-# TODO здесь тоже нужно подключить Swagger и corsheaders
+# TODO здесь тоже нужно подключить Swagger
 INSTALLED_APPS = [
     "django.contrib.admin",
     "django.contrib.auth",
@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     "users",
     "ads",
     "redoc",
+    "corsheaders",
 ]
 
 
@@ -89,9 +90,15 @@ DJOSER = {
 
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
-
-# TODO здесь необходимо настроить подключение к БД
 DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': os.environ.get('DB_NAME', 'skymarket'),
+        'USER': os.environ.get('DB_USER', 'skymarket'),
+        'PASSWORD': os.environ.get('DB_PASSWORD', 'skymarket'),
+        'HOST': os.environ.get('DB_HOST', 'localhost'),
+        'PORT': os.environ.get('DB_PORT', '5432'),
+    }
 }
 
 
@@ -119,7 +126,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = "ru"
 
-TIME_ZONE = "UTC"
+TIME_ZONE = 'Europe/Moscow'
 
 USE_I18N = True
 

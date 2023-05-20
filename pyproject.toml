@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "sky-django-market"
+version = "0.1.0"
+description = ""
+authors = ["Manuilov Daniil <manuilovdaniil@yandex.ru>"]
+readme = "README.md"
+packages = [{include = "sky_django_market"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+django = "^3"
+django-cors-headers = "^3"
+python-dotenv = "^1.0.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
