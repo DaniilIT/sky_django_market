@@ -11,6 +11,7 @@ python = "^3.11"
 django = "^3"
 django-cors-headers = "^3"
 python-dotenv = "^1.0.0"
+drf-yasg = "^1.21.5"
 
 
 [build-system]

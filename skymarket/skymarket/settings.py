@@ -46,7 +46,8 @@ INSTALLED_APPS = [
     "users",
     "ads",
     "redoc",
-    "corsheaders",
+    "corsheaders",  # разрешить доступ из разных источников (разное происхождение)
+    "drf_yasg",
 ]
 
 
