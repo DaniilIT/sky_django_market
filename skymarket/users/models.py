@@ -12,7 +12,7 @@ class UserRoles(models.TextChoices):
 
 class User(AbstractBaseUser):
     USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = ['first_name', 'last_name', 'phone', 'role']
+    REQUIRED_FIELDS = ['first_name', 'last_name', 'phone', 'role']  # # 'role'
 
     objects = UserManager()
 
@@ -23,6 +23,7 @@ class User(AbstractBaseUser):
     role = models.CharField('Роль', max_length=5, choices=UserRoles.choices, default=UserRoles.USER,
                             help_text='Выберите роль')
     image = models.ImageField('Аватарка', upload_to='avatars', blank=True, null=True)
+    is_active = models.BooleanField('Действующий', default=True)
 
     class Meta:
         verbose_name = "Пользователь"

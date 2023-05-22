@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     "corsheaders",  # разрешить доступ из разных источников (разное происхождение)
     "drf_yasg",
     "phonenumber_field",
+    "django_filters",
 ]
 
 
